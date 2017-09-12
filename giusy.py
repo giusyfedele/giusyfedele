@@ -30,11 +30,11 @@ phiOld=phi.copy()
 coeff=(coeffdiff*dt)/(dx**2)
 
 for j in xrange(1,nx):
-	phi[j]=phiOld[j]-coeff*(phiOld[j+1]-2*phiOld[j]+phiOld[j-1])
+	phi[j]=phiOld[j]+coeff*(phiOld[j+1]-2*phiOld[j]+phiOld[j-1])
 
 #Apply periodic boundary condition
 
-phi[0]=phiOld[0]-coeff*(phiOld[1]-2*phiOld[0]+phiOld[nx-1])
+phi[0]=phiOld[0]+coeff*(phiOld[1]-2*phiOld[0]+phiOld[nx-1])
 phi[nx]=phi[0]
 
 
