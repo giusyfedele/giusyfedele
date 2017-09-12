@@ -41,11 +41,11 @@ phi[nx]=phi[0]
 for n in xrange(1,nt):
 #loop over space
 	for j in xrange(1,nx):
-		phiNew[j]=phiOld[j]-coeff*(phi[j+1]-2*phi[j]+phi[j-1])
+		phiNew[j]=phiOld[j]+coeff*(phi[j+1]-2*phi[j]+phi[j-1])
 
 #Apply periodic boundary condition
 
-	phiNew[0]=phiOld[0]-coeff*(phi[1]-2*phi[0]+phi[nx-1])
+	phiNew[0]=phiOld[0]+coeff*(phi[1]-2*phi[0]+phi[nx-1])
 	phiNew[nx]=phiNew[0]
 
 #update phi for the next time-step
